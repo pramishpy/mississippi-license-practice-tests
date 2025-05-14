@@ -293,6 +293,81 @@ const allQuestions = [
         question: "When you are driving on a two-lane road and an emergency vehicle with flashing lights is approaching from the opposite direction, you should:",
         options: ["Pull over to the right side of the road and stop", "Continue driving at your current speed", "Move to the left side of the road", "Speed up to pass"],
         answer: 0
+    },
+    {
+        question: "What should you do if you are driving in a heavy rainstorm and your windshield wipers stop working?",
+        options: ["Keep driving", "Pull over and stop", "Turn on your hazard lights", "Use your high beams"],
+        answer: 1
+    },
+    {
+        question: "What is the maximum speed limit for passenger vehicles on Mississippi interstates?",
+        options: ["55 mph", "60 mph", "65 mph", "70 mph"],
+        answer: 3
+    },
+    {
+        question: "When approaching a traffic signal that is not working, you should:",
+        options: ["Treat it as a stop sign", "Speed up to get through quickly", "Stop only if other vehicles are present", "Ignore it"],
+        answer: 0
+    },
+    {
+        question: "What is the minimum distance you must stop from a fire hydrant?",
+        options: ["5 feet", "10 feet", "15 feet", "20 feet"],
+        answer: 2
+    },
+    {
+        question: "What should you do if you are driving and your cell phone rings?",
+        options: ["Answer it immediately", "Let it go to voicemail", "Pull over to a safe location before answering", "Ignore it"],
+        answer: 2
+    },
+    {
+        question: "When is it legal to use a cell phone while driving in Mississippi?",
+        options: ["Always", "Only with a hands-free device", "Only in emergencies", "Never"],
+        answer: 1
+    }   ,
+    {
+        question: "What is the minimum age to apply for a motorcycle learner's permit in Mississippi?",
+        options: ["14", "15", "16", "17"],
+        answer: 1
+    },
+    {
+        question: "What should you do if you are driving and see a pedestrian in a crosswalk?",
+        options: ["Speed up to pass them", "Slow down and yield to them", "Ignore them", "Honk your horn"],
+        answer: 1
+    },
+    {
+        question: "When is it legal to drive with your high beams on?",
+        options: ["Only in rural areas", "Only when there are no oncoming vehicles", "Only at night", "Always"],
+        answer: 1
+    },
+    {
+        question: "What is the correct hand signal for a left turn?",
+        options: ["Left arm straight out", "Left arm bent upward", "Left arm bent downward", "Right arm straight out"],
+        answer: 0
+    },
+    {
+        question: "What should you do if you are driving and see a construction zone ahead?",
+        options: ["Speed up to get through quickly", "Slow down and follow posted signs", "Ignore it", "Honk your horn"],
+        answer: 1
+    },
+    {
+        question: "When is it legal to pass another vehicle on the left?",
+        options: ["When there is a solid yellow line", "When there is a broken yellow line", "When there is a solid white line", "When there is a broken white line"],
+        answer: 1
+    } ,
+    {
+        question: "What should you do if you are driving and see a deer on the road?",
+        options: ["Speed up to pass it", "Slow down and be prepared to stop", "Honk your horn", "Ignore it"],
+        answer: 1
+    },
+    {
+        question: "What is the minimum distance you must stop from a school bus with its red lights flashing?",
+        options: ["10 feet", "15 feet", "20 feet", "25 feet"],
+        answer: 2
+    },
+    {
+        question: "When is it legal to drive in the left lane of a multi-lane highway?",
+        options: ["Only when passing another vehicle", "Only when there is heavy traffic", "Only when there are no other vehicles present", "Always"],
+        answer: 0
     }
 ];
 
