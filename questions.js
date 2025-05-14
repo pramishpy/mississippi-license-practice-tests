@@ -368,6 +368,201 @@ const allQuestions = [
         question: "When is it legal to drive in the left lane of a multi-lane highway?",
         options: ["Only when passing another vehicle", "Only when there is heavy traffic", "Only when there are no other vehicles present", "Always"],
         answer: 0
+    },
+    {
+        question: "What information is required on a Mississippi driver's license application form?",
+        options: [
+            "Full name, DOB, address, SSN, physical description, medical history, driving record.",
+            "Name, address, and phone number only.",
+            "SSN and driving record only.",
+            "Physical description and photo ID."
+        ],
+        answer: 0
+    },
+    {
+        question: "For an original Mississippi license, applicants 18 or older must show how many proofs of residency?",
+        options: ["One", "Two", "Three", "None if a US citizen"],
+        answer: 1
+    },
+    {
+        question: "Applicants under 21 for a Mississippi license can use whose residency documentation?",
+        options: ["Their own only", "Their parent's or guardian's", "Their employer's", "Any adult friend's"],
+        answer: 1
+    },
+    {
+        question: "Which is an acceptable proof of residency for a Mississippi driver's license?",
+        options: ["A P.O. Box address", "A blank personal check", "An electric bill with a physical address", "A social media profile"],
+        answer: 2
+    },
+    {
+        question: "What are the two primary proofs of identification required for a Mississippi license or permit?",
+        options: ["Social Security card and student ID", "Certified birth certificate and credit card", "Social Security card and certified birth certificate", "Passport and library card"],
+        answer: 2
+    },
+    {
+        question: "If your Social Security card is lost, what must you do before applying for a Mississippi license?",
+        options: ["Use a photocopy of it", "Sign an affidavit of loss", "Obtain a new Social Security card", "Provide your tax ID number instead"],
+        answer: 2
+    },
+    {
+        question: "If you hold an out-of-state license, what must you provide with your SS card and birth certificate for a MS license?",
+        options: ["A character reference", "The out-of-state license or a lost license affidavit", "Proof of Mississippi employment", "A driving school completion certificate"],
+        answer: 1
+    },
+    {
+        question: "Applicants under 18 for a Mississippi license must provide what regarding school enrollment?",
+        options: ["A verbal school confirmation", "Last year's report card", "A recent Certification of Attendance form", "A letter from a teacher"],
+        answer: 2
+    },
+    {
+        question: "What can a married applicant under 18 show instead of a School Certification of Attendance for a MS license?",
+        options: ["A letter from their spouse", "Their marriage license", "A joint utility bill", "A joint bank statement"],
+        answer: 1
+    },
+    {
+        question: "Whose signatures are generally required on a Mississippi license application for someone under 17?",
+        options: ["One parent only", "Both parents (if living and have legal custody)", "A school principal", "Any responsible adult over 21"],
+        answer: 1
+    },
+    {
+        question: "Who is legally liable for the driving negligence of a minor whose Mississippi license application they signed?",
+        options: ["The State of Mississippi", "The minor applicant only", "The person who signed the application", "The Department of Public Safety"],
+        answer: 2
+    },
+    {
+        question: "The signature of the person endorsing a minor's Mississippi license application must be:",
+        options: ["Witnessed by a DPS employee", "Notarized", "Signed in black ink only", "Accompanied by their driver's license copy"],
+        answer: 1
+    },
+    {
+        question: "Starting July 1, 2027, what new requirement is there for a Mississippi driver's license?",
+        options: ["Proof of vehicle insurance for 1 year", "A letter of recommendation", "Completion of a certified Driver's Education program", "A mandatory defensive driving course for all ages"],
+        answer: 2
+    },
+    {
+        question: "Identify this traffic sign:",
+        image: "stop_sign.png", // Ensure 'stop_sign.png' is in your 'images' folder
+        options: ["Yield", "Stop", "Do Not Enter", "Speed Limit"],
+        answer: 1
+    },
+    {
+        question: "What does this sign indicate?",
+        image: "yield_sign.png", // Ensure 'yield_sign.png' is in your 'images' folder
+        options: ["Stop Ahead", "Merge", "Yield Right-of-Way", "No U-Turn"],
+        answer: 2
+    },
+    {
+        question: "Identify this traffic sign:",
+        image: "school_crossing_sign.png", // Ensure 'school_crossing_sign.png' is in your 'images' folder
+        options: ["Playground Ahead", "School Crossing", "Pedestrian Crossing", "Hospital Zone"],
+        answer: 1
+    },
+    {
+        question: "What does this sign mean?",
+        image: "no_passing_zone_sign.pennant.png", // Example: ensure 'no_passing_zone_sign.pennant.png' is in 'images'
+        options: ["No Passing Zone", "One Way Street", "Lane Ends", "Road Narrows"],
+        answer: 0
+    },
+    {
+        question: "This sign designates:",
+        image: "handicapped_parking_sign.png", // Ensure 'handicapped_parking_sign.png' is in your 'images' folder
+        options: ["Hospital Ahead", "Handicapped Parking Only", "No Parking Anytime", "Rest Area"],
+        answer: 1
+    },
+    {
+        question: "What does this sign indicate?",
+        image: "center_turn_sign.png", // Ensure 'center_lane_turn_only_sign.png' is in 'images'
+        options: ["Two-Way Traffic", "Center Lane for Turns Only", "Passing Permitted", "Road Divides"],
+        answer: 1
+    },
+    {
+        question: "This sign warns of:",
+        image: "traffic_signal_ahead_sign.png", // Ensure 'traffic_signal_ahead_sign.png' is in 'images'
+        options: ["Stop Sign Ahead", "Railroad Crossing Ahead", "Traffic Signal Ahead", "Yield Ahead"],
+        answer: 2
+    },
+    {
+        question: "What does this sign mean?",
+        image: "stop_ahead_sign.png", // Ensure 'stop_ahead_sign.png' is in 'images'
+        options: ["Stop Immediately", "Prepare to Stop Ahead", "Yield Ahead", "No Stopping"],
+        answer: 1
+    },
+    {
+        question: "This sign indicates:",
+        image: "yield_ahead_sign.png", // Ensure 'yield_ahead_sign.png' is in 'images'
+        options: ["Yield Ahead", "Merge Ahead", "Stop Ahead", "Intersection Ahead"],
+        answer: 0
+    },
+    {
+        question: "Identify this traffic sign:",
+        image: "t_intersection_sign.png", // Ensure 't_intersection_sign.png' is in 'images'
+        options: ["Crossroad Ahead", "Side Road Ahead", "T-Intersection Ahead", "Road Ends"],
+        answer: 2
+    },
+    {
+        question: "This sign warns of:",
+        image: "winding_road_sign.png", // Ensure 'winding_road_sign.png' is in 'images'
+        options: ["Sharp Turn Ahead", "Slippery Road Ahead", "Winding Road Ahead", "Hill Ahead"],
+        answer: 2
+    },
+    {
+        question: "What does this sign indicate?",
+        image: "slippery_when_wet_sign.png", // Ensure 'slippery_when_wet_sign.png' is in 'images'
+        options: ["Road Narrows", "Slippery When Wet", "Rough Road", "Falling Rocks"],
+        answer: 1
+    },
+    {
+        question: "What does a pentagon-shaped sign typically indicate?",
+        options: ["Railroad Crossing", "Stop", "School Zone or School Crossing", "Yield"],
+        answer: 2 // Referring to page 27 of the manual for shape meanings
+    },
+    {
+        question: "This sign warns of:",
+        image: "pedestrian_crossing_sign.png", // Ensure 'pedestrian_crossing_sign.png' is in 'images'
+        options: ["School Zone", "Playground Ahead", "Pedestrian Crossing", "No Pedestrians"],
+        answer: 2
+    },
+    {
+        question: "Identify this route marker:",
+        image: "interstate_route_marker_sign.png", // Ensure 'interstate_route_marker_sign.png' is in 'images'
+        options: ["State Highway", "U.S. Highway", "County Road", "Interstate Highway"],
+        answer: 3
+    },
+    {
+        question: "What type of route does this sign mark?",
+        image: "us_route_marker_sign.png", // Ensure 'us_route_marker_sign.png' is in 'images'
+        options: ["U.S. Highway", "State Route", "Scenic Byway", "Business Loop"],
+        answer: 0
+    },
+    {
+        question: "An orange diamond-shaped sign typically means:",
+        image: "road_work_ahead_sign.png", // Ensure 'road_work_ahead_sign.png' is in 'images'
+        options: ["School Zone", "Construction or Maintenance Warning", "Regulatory Information", "Rest Area Ahead"],
+        answer: 1
+    },
+    {
+        question: "This sign indicates:",
+        image: "flagger_ahead_symbol_sign.png", // Ensure 'flagger_ahead_symbol_sign.png' is in 'images'
+        options: ["Road Closed Ahead", "Detour Ahead", "Flagger Ahead Controlling Traffic", "Workers Ahead"],
+        answer: 2
+    },
+    {
+        question: "This emblem identifies:",
+        image: "slow_moving_vehicle_emblem.png", // Ensure 'slow_moving_vehicle_emblem.png' is in 'images'
+        options: ["Hazardous Material Carrier", "Oversized Load", "Slow-Moving Vehicle (25 mph or less)", "Emergency Vehicle"],
+        answer: 2
+    },
+    {
+        question: "What does this white 'crossbuck' sign at a railroad crossing mean?",
+        image: "railroad_crossbuck_sign.png", // Ensure 'railroad_crossbuck_sign.png' is in 'images'
+        options: ["Yield to trains", "Stop, look, and listen for trains", "Railroad crossing - equivalent to a YIELD sign", "Speed limit 15 mph"],
+        answer: 2 // The manual states it's posted at most crossings; often accompanied by yield or stop. The round yellow sign is the "ahead" warning.
+    },
+    {
+        question: "What does a 'NO PASSING ZONE' pennant-shaped sign mean?",
+        image: "no_passing_zone_sign.pennant.png", // Re-using existing image for clarity on pennant shape
+        options: ["You are entering a no-passing zone", "Passing is allowed ahead", "End of no-passing zone", "Pass with caution"],
+        answer: 0
     }
 ];
 
@@ -413,7 +608,14 @@ function renderQuiz() {
     const qDiv = document.createElement('div');
     qDiv.className = 'question-block active';
 
+    let imageHTML = '';
+    if (q.image) {
+        // Assuming images are in an 'images' subdirectory relative to the HTML file
+        imageHTML = `<div class="question-image-container"><img src="images/${q.image}" alt="Traffic sign related to question: ${q.question}" class="question-image"></div>`;
+    }
+
     qDiv.innerHTML = `
+        ${imageHTML}
         <p class="question-text"><strong>Question ${currentQuestionIndex + 1}:</strong> ${q.question}</p>
         <div class="options-container">
             ${q.options.map((opt, i) => `

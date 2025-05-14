@@ -12,7 +12,13 @@ const questionCategories = {
         "What does a double solid yellow line mean?",
         "What does a broken white line on the roadway indicate?",
         "What does a flashing red traffic light mean?",
-        "What does a flashing yellow light mean?"
+        "What does a flashing yellow light mean?",
+        "Identify this traffic sign", // New keyword for image questions
+        "What does this sign indicate?", // New keyword for image questions
+        "What does this sign mean?",
+        "This sign warns of:",
+        "This sign designates:",
+        "This emblem identifies:"
     ],
     
     // Driving laws
@@ -22,7 +28,12 @@ const questionCategories = {
         "What is the legal speed limit in a Mississippi school zone?",
         "What is the maximum speed limit for passenger vehicles on Mississippi interstates?",
         "In Mississippi, you must signal your intention to turn or change lanes at least ____ feet before making the maneuver.",
-        "In Mississippi, a child under the age of ____ must be secured in a child restraint system."
+        "In Mississippi, a child under the age of ____ must be secured in a child restraint system.",
+        "Certification of Attendance",
+        "application signature",
+        "liability for applicant",
+        "notarized",
+        "Driver's Education requirement"
     ],
     
     // Safe driving practices
@@ -76,7 +87,11 @@ const questionCategories = {
         "When must you dim your headlights?",
         "What is the minimum distance you must stop from a railroad crossing when a train is approaching?",
         "You may make a right turn on a red traffic signal after:",
-        "When driving at night, you should use your high beam headlights when:"
+        "When driving at night, you should use your high beam headlights when:",
+        "application form information",
+        "proof of residency",
+        "proofs of identification",
+        "Social Security card"
     ]
 };
 
@@ -89,13 +104,13 @@ const questionCategories = {
 function selectBalancedQuestions(allQuestions, totalQuestions = 30) {
     // Define how many questions we want from each category
     const distribution = {
-        "signs": 5,       // Road signs: ~17%
-        "laws": 4,        // Driving laws: ~13%
-        "safety": 5,      // Safety practices: ~17%
-        "rightOfWay": 4,  // Right of way: ~13%
-        "maneuvers": 4,   // Special maneuvers: ~13%
-        "emergency": 3,   // Emergency situations: ~10%
-        "general": 5      // General rules: ~17%
+        "signs": 7,       // Increased to accommodate more sign questions
+        "laws": 4,
+        "safety": 5,
+        "rightOfWay": 4,
+        "maneuvers": 3,   // Adjusted
+        "emergency": 3,
+        "general": 4      // Adjusted
     };
     
     // Collect questions by category
@@ -107,14 +122,14 @@ function selectBalancedQuestions(allQuestions, totalQuestions = 30) {
         let assigned = false;
         
         // Check if question belongs to any category
-        for (const [category, questions] of Object.entries(questionCategories)) {
-            if (questions.some(phrase => q.question.includes(phrase) || questions.some(p => q.question.includes(p)))) {
+        for (const [category, questionsInCat] of Object.entries(questionCategories)) {
+            if (questionsInCat.some(phrase => q.question.toLowerCase().includes(phrase.toLowerCase()))) {
                 if (!categorizedQuestions[category]) {
                     categorizedQuestions[category] = [];
                 }
                 categorizedQuestions[category].push(q);
                 assigned = true;
-                break;
+                break; 
             }
         }
         
@@ -136,35 +151,38 @@ function selectBalancedQuestions(allQuestions, totalQuestions = 30) {
     
     for (const [category, targetCount] of Object.entries(distribution)) {
         const available = categorizedQuestions[category] || [];
-        const count = Math.min(targetCount, available.length);
+        const count = Math.min(targetCount, available.length, remainingSlots);
         
         if (count > 0) {
-            selectedQuestions.push(...getRandomItems(available, count));
+            const items = getRandomItems(available, count);
+            selectedQuestions.push(...items);
             remainingSlots -= count;
+            // Remove selected items from available to avoid duplicates if pool is used later
+            categorizedQuestions[category] = available.filter(item => !items.includes(item));
         }
     }
     
     // Fill any remaining slots with uncategorized or random questions
     if (remainingSlots > 0) {
-        const pool = [...uncategorized];
-        
-        // If we still need more, add from all questions
-        if (pool.length < remainingSlots) {
-            // Add questions that weren't selected yet
-            for (const category in categorizedQuestions) {
-                const selected = selectedQuestions.map(q => q.question);
-                const unused = categorizedQuestions[category].filter(q => !selected.includes(q.question));
-                pool.push(...unused);
-            }
+        let pool = [...uncategorized];
+        const selectedQuestionTexts = selectedQuestions.map(q => q.question);
+
+        // Add questions that weren't selected yet from categorized questions if uncategorized is not enough
+        for (const category in categorizedQuestions) {
+            const unusedInCategory = categorizedQuestions[category].filter(q => !selectedQuestionTexts.includes(q.question));
+            pool.push(...unusedInCategory);
         }
         
-        // Add random questions to fill remaining slots
+        // Remove duplicates from the pool that might have been added if a question was uncategorized but also matched a category later
+        pool = pool.filter((q, index, self) => 
+            index === self.findIndex((t) => t.question === q.question) && !selectedQuestionTexts.includes(q.question)
+        );
+
         const additionalQuestions = getRandomItems(pool, remainingSlots);
-        selectedQuestions.push(...additionalQuestions.filter(q => 
-            !selectedQuestions.some(sq => sq.question === q.question)
-        ).slice(0, remainingSlots));
+        selectedQuestions.push(...additionalQuestions);
     }
     
-    // Shuffle the final selection
-    return selectedQuestions.sort(() => 0.5 - Math.random());
+    // Shuffle the final selection to ensure randomness if totalQuestions is less than sum of distribution
+    // Or if questions were added from the pool
+    return selectedQuestions.slice(0, totalQuestions).sort(() => 0.5 - Math.random());
 }
